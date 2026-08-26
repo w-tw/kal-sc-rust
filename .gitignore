@@ -1,0 +1,21 @@
+# Build artifacts
+/target
+
+# Lockfile is not committed for library crates.
+Cargo.lock
+
+# rustfmt backups (older toolchains)
+**/*.rs.bk
+
+# Debug symbols
+*.pdb
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

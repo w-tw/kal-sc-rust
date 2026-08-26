@@ -1,0 +1,25 @@
+[package]
+name = "kal-sc"
+version = "0.1.0"
+edition = "2021"
+description = "Smart contract SDK for the Kalvora Network"
+license = "Apache-2.0"
+repository = "https://github.com/w-tw/kal-sc-rust"
+readme = "README.md"
+keywords = ["kalvora", "smart-contract", "blockchain", "wasm", "sdk"]
+categories = ["wasm", "cryptography::cryptocurrencies"]
+authors = ["Kalvora Network"]
+rust-version = "1.70"
+include = [
+    "src/**/*.rs",
+    "Cargo.toml",
+    "README.md",
+    "LICENSE",
+]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+postcard = { version = "1", default-features = false, features = ["use-std"] }
+uint = "0.9"
+wasmedge-bindgen = "0.4.1"
+wasmedge-bindgen-macro = "0.4.1"

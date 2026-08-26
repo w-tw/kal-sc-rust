@@ -1,3 +1,39 @@
+//! Smart contract SDK for the Kalvora Network.
+//!
+//! Write contracts in Rust, compile to `wasm32-unknown-unknown`, and deploy
+//! to Kalvora validators. `kal-sc` wraps the native host ABI exposed by
+//! validators in a safe, idiomatic Rust API, handling serialization, memory
+//! management, and the different execution contexts (direct calls,
+//! `delegatecall`, derived wallets, etc.).
+//!
+//! # Quick start
+//!
+//! ```ignore
+//! use kal_sc::{emit, wasmedge_bindgen};
+//!
+//! #[wasmedge_bindgen]
+//! pub fn hello(name: String) {
+//!     emit(&format!("hello, {}", name));
+//! }
+//! ```
+//!
+//! # Modules
+//!
+//! - [`transfer`] — move tokens: `send`, `send_multi`, `send_all`, `deposit`, `burn`, `mint`
+//! - [`state`] — persist data: `save`, `load`, `clear`, `exists`
+//! - [`query`] — read network state: balances, token metadata, contract existence
+//! - [`call`] — invoke other contracts: `execute` or `delegate`
+//! - [`txn`] — submit raw network transactions
+//! - [`wallet`] — derive wallets owned by this contract
+//! - [`context`] — read the current frame: sender, block time, contract identity
+//! - [`crypto`] — hashing primitives: `sha256`, `sha512`, `blake3`, `shake`
+//!
+//! # Non-WASM targets
+//!
+//! On targets other than `wasm32`, every host function is stubbed to panic,
+//! so the crate compiles (and docs build) everywhere, but contract logic can
+//! only be exercised inside a validator.
+
 #![allow(clippy::result_unit_err)]
 
 mod base64;

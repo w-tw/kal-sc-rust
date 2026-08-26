@@ -5,6 +5,7 @@ edition = "2021"
 description = "Smart contract SDK for the Kalvora Network"
 license = "Apache-2.0"
 repository = "https://github.com/w-tw/kal-sc-rust"
+documentation = "https://docs.rs/kal-sc"
 readme = "README.md"
 keywords = ["kalvora", "smart-contract", "blockchain", "wasm", "sdk"]
 categories = ["wasm", "cryptography::cryptocurrencies"]

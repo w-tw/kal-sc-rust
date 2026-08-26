@@ -54,9 +54,10 @@ cargo build --target wasm32-unknown-unknown --release
 The resulting `.wasm` in `target/wasm32-unknown-unknown/release/` is what you
 deploy to the Kalvora Network.
 
-> **Note:** `kal-sc` only produces meaningful output inside a Kalvora validator.
-> Every host function is stubbed out on non-WASM targets, so `cargo run` on a
-> desktop won't do anything useful — that's by design.
+> **Note:** `kal-sc` only works inside a Kalvora validator. On non-WASM
+> targets every host function is stubbed to panic with a clear message, so the
+> crate compiles (and docs build) everywhere, but contract logic can only be
+> exercised on-chain.
 
 ## Module overview
 
@@ -217,9 +218,9 @@ identify a smart contract as a restricted-key holder.
 
 ## Targets and builds
 
-`kal-sc` is designed for `wasm32-unknown-unknown` only. Host-side host
-functions are stubbed when compiled for other targets, so running contract code
-on a desktop target is safe but not useful.
+`kal-sc` is designed for `wasm32-unknown-unknown` only. Host functions are
+stubbed to panic when compiled for other targets, so the crate builds on any
+target but calling any host-backed function off-chain will panic.
 
 Recommended release build:
 

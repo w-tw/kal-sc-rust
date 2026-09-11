@@ -11,10 +11,24 @@ etc.) so you can focus on contract logic.
 Kalvora Network contract ID:
 
 ```text
-KALVxuuPAwkBPQKBDAjnMzJcbbk7W6GPhXuNt9XmKZnxdLecM
+KALXvxhUMJERCse4e6b2jeXFkcqqpiUByQQckvPZm4szmF3Ao
 ```
 
-The same value is exported as `kal_sc::KALVORA_NETWORK_CONTRACT_ID`.
+The same value is exported as `kal_sc::KALVORA_NETWORK_CONTRACT_ID`. IDs for
+the other core network contracts are exported alongside it:
+
+| Constant                      | Contract        |
+|-------------------------------|-----------------|
+| `KALVORA_NETWORK_CONTRACT_ID` | KAL             |
+| `PREGOV_CONTRACT_ID`          | PreGov          |
+| `KIP_CONTRACT_ID`             | Kip             |
+| `LEGAL_CONTRACT_ID`           | Legal           |
+| `MINT_CONTRACT_ID`            | Mint            |
+| `TREASURY_CONTRACT_ID`        | Treasury        |
+| `TECH_CONTRACT_ID`            | Tech            |
+| `MARKETING_CONTRACT_ID`       | Marketing       |
+| `BRIDGE_TOKENS_CONTRACT_ID`   | BridgeTokens    |
+| `BRIDGE_GUARDIANS_CONTRACT_ID`| BridgeGuardians |
 
 ## Installation
 

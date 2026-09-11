@@ -58,7 +58,35 @@ pub use wasmedge_bindgen_macro::wasmedge_bindgen;
 use serde::{de::DeserializeOwned, Serialize};
 
 /// The canonical Kalvora Network contract identifier.
-pub const KALVORA_NETWORK_CONTRACT_ID: &str = "KALVxuuPAwkBPQKBDAjnMzJcbbk7W6GPhXuNt9XmKZnxdLecM";
+pub const KALVORA_NETWORK_CONTRACT_ID: &str = "KALXvxhUMJERCse4e6b2jeXFkcqqpiUByQQckvPZm4szmF3Ao";
+
+/// The PreGov contract identifier.
+pub const PREGOV_CONTRACT_ID: &str = "PREDNmAbR9Juj233WUQ6kqFGf28oe5kVAK5Y3mhGfE6cVBF95";
+
+/// The Kip contract identifier.
+pub const KIP_CONTRACT_ID: &str = "K1PoaARovFYFLAqWRoXubXBkJ2dSynjzUyRzsBc3ycbGEn9pK";
+
+/// The Legal contract identifier.
+pub const LEGAL_CONTRACT_ID: &str = "LEGWZ2q8Dw1B8Z9r61STBkaFLPMfDYQPQXFEzJzmQEdyw9tg5";
+
+/// The Mint contract identifier.
+pub const MINT_CONTRACT_ID: &str = "M1NTxB3N3GeM5CZLHj3bDLtuye15VQxTTJ3omn9g9Ti87o9b3";
+
+/// The Treasury contract identifier.
+pub const TREASURY_CONTRACT_ID: &str = "TREF2UL7Ut6JDTcAaGfY32UrQv9aC5MVyyDjNbFKjhAq51cet";
+
+/// The Tech contract identifier.
+pub const TECH_CONTRACT_ID: &str = "TECfnGgEykEs1G57P43ABBb6i73LgwAbHLPf46z1kGyY9A7PY";
+
+/// The Marketing contract identifier.
+pub const MARKETING_CONTRACT_ID: &str = "MARYCY87a7ZdeYERoCJbwFv8r6Sm69zjKEspEEo91kcDGH3ce";
+
+/// The BridgeTokens contract identifier.
+pub const BRIDGE_TOKENS_CONTRACT_ID: &str = "BRT3zKHfF8RgqbaYGTrv58j3LpNUr5EAJBVn63sBfpTE7AfFk";
+
+/// The BridgeGuardians contract identifier.
+pub const BRIDGE_GUARDIANS_CONTRACT_ID: &str =
+    "BRGhGqDbqLMqYNRdCSbBVujfQurhW5x3AkQQPnUUCe5Ctb5ua";
 
 /// Emit a log message from the contract. Visible in transaction results.
 pub fn emit(message: &str) {

@@ -88,6 +88,13 @@ pub const BRIDGE_TOKENS_CONTRACT_ID: &str = "BRT3zKHfF8RgqbaYGTrv58j3LpNUr5EAJBV
 pub const BRIDGE_GUARDIANS_CONTRACT_ID: &str =
     "BRGhGqDbqLMqYNRdCSbBVujfQurhW5x3AkQQPnUUCe5Ctb5ua";
 
+/// The Smart Contract Maintenance contract identifier.
+pub const SMART_CONTRACT_MAINTENANCE_CONTRACT_ID: &str =
+    "SCMgkjeFFnHPR7rr6AGqBp1FTm7YK67GiJrLcU159QeZxGk6d";
+
+/// The Treasury wallet address.
+pub const TREASURY_WALLET: &str = "6XD7kTqm4KuhGWniHGPh3vUE1uSobfVT3ZfveDdiE13j";
+
 /// Emit a log message from the contract. Visible in transaction results.
 pub fn emit(message: &str) {
     let ptr = message.as_bytes().as_ptr();

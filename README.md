@@ -29,6 +29,9 @@ the other core network contracts are exported alongside it:
 | `MARKETING_CONTRACT_ID`       | Marketing       |
 | `BRIDGE_TOKENS_CONTRACT_ID`   | BridgeTokens    |
 | `BRIDGE_GUARDIANS_CONTRACT_ID`| BridgeGuardians |
+| `SMART_CONTRACT_MAINTENANCE_CONTRACT_ID` | Smart Contract Maintenance |
+
+The Treasury wallet address is exported as `TREASURY_WALLET`.
 
 ## Installation
 

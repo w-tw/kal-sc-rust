@@ -460,6 +460,11 @@ extern "C" {
         contract_id_length: i32,
         target_pointer: *const u8,
     ) -> i32;
+    pub fn validator_info(
+        wallet_pointer: *const u8,
+        wallet_length: i32,
+        target_pointer: *const u8,
+    ) -> i32;
     pub fn contract_wallet(
         sc_key_pointer: *const u8,
         sc_key_length: i32,
@@ -1046,6 +1051,9 @@ mod stubs {
         panic!("{}", MSG)
     }
     pub unsafe extern "C" fn contract_symbol(_: *const u8, _: i32, _: *const u8) -> i32 {
+        panic!("{}", MSG)
+    }
+    pub unsafe extern "C" fn validator_info(_: *const u8, _: i32, _: *const u8) -> i32 {
         panic!("{}", MSG)
     }
     pub unsafe extern "C" fn contract_wallet(_: *const u8, _: i32, _: *const u8) -> i32 {

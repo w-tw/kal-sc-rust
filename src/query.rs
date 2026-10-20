@@ -76,6 +76,36 @@ pub fn token_symbol(contract_id: &str) -> String {
     ffi_query_one(contract_id, ffi::contract_symbol)
 }
 
+/// Validator status for a main wallet, as returned by [`validator_info`].
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+pub struct ValidatorInfo {
+    /// The wallet belongs to a currently registered validator.
+    pub is_validator: bool,
+    /// The validator is online and has sent a heartbeat within the last 500 blocks.
+    pub online: bool,
+    /// Always `false` until slashing is tracked on the network.
+    pub slashed: bool,
+    /// The validator has unbonded and is inside the 7-day unbonding period.
+    pub unbonding: bool,
+}
+
+/// Look up a validator by its main wallet address (Base58).
+///
+/// This is the wallet derived from the validator's original public key, not
+/// its generated operational key. Unknown wallets and invalid Base58 return
+/// every field as `false`.
+pub fn validator_info(wallet: &str) -> ValidatorInfo {
+    let res = ffi_query_one(wallet, ffi::validator_info);
+    let flags: Vec<bool> = res.split(',').map(|s| s == "true").collect();
+    let flag = |i: usize| flags.get(i).copied().unwrap_or(false);
+    ValidatorInfo {
+        is_validator: flag(0),
+        online: flag(1),
+        slashed: flag(2),
+        unbonding: flag(3),
+    }
+}
+
 /// Resolve a smart contract's wallet address from its name and instance.
 ///
 /// `instance` defaults to `"1"` if `None`. Returns an empty string if the
